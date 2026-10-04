@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+message_file="$1"
+message=$(head -n 1 "$message_file")
+
+if echo "$message" | grep -qi '^wip\b'; then
+  echo "commit-msg: Commit message must not start with 'WIP'."
+  exit 1
+fi
+
+if [ "${#message}" -lt 10 ]; then
+  echo "commit-msg: Commit message first line must be at least 10 characters long."
+  exit 1
+fi
+
+exit 0
