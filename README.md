@@ -2,7 +2,7 @@
 
 ## Git hooks
 
-This repository includes git hooks in `/home/runner/work/git-hook-test/git-hook-test/.githooks`.
+This repository includes git hooks in `.githooks`.
 
 Enable them with:
 
